@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react'
 export const TabTitleCounter = () => {
   const [count, setCount] = useState<number>(0)
 
-  const documentTitle = `Count: ${count}`
-
   useEffect(() => {
     document.title = `Count: ${count}`
     console.log(`Document title updated → Count: ${count}`)
@@ -13,7 +11,7 @@ export const TabTitleCounter = () => {
     return () => {
       console.log('Cleaning up previous title effect...')
     }
-  }, [documentTitle, count])
+  }, [count])
 
   useEffect(() => {
     console.log('Mounted')
